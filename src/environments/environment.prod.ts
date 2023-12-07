@@ -2,11 +2,10 @@
 // const backendUrl = 'http://localhost:8080/';
 // const loginUrl = 'http://localhost:4200/login';
 
-const frontendUrl = 'https://tube.freedom.buzz/';
-const backendUrl = 'https://api.freedom.buzz/';
-const loginUrl = 'https://freedom.buzz/login';
-const wasabiUrl = 'https://freedom-social.s3.us-east-1.wasabisys.com/'
-const logoutUrl = 'https://freedom.buzz/logout';
+const frontendUrl = 'https://video.healing.tube/';
+const backendUrl = 'https://api.healing.tube/';
+const loginUrl = 'https://healing.tube/login';
+const logoutUrl = 'https://healing.tube/logout';
 
 
 
@@ -17,10 +16,7 @@ export const environment = {
   loginUrl: loginUrl,
   apiUrl: `${backendUrl}api/v1/`,
   domain: '.healing.tube',
-  wasabiUrl: wasabiUrl,
   socketUrl: `${backendUrl}`,
   conferenceUrl: 'https://facetime.tube/',
   logoutUrl: logoutUrl
-
 };
-

@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run video-healing-tube:dev-serve-ssr",
-    "serve:ssr": "node dist/video-healing-tube/server/main.js",
+    "serve:ssr": "node dist-video/video-healing-tube/server/main.js",
     "build:ssr": "ng build && ng run video-healing-tube:server",
     "prerender": "ng run video-healing-tube:prerender"
   },
