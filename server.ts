@@ -78,14 +78,14 @@ export function app(): express.Express {
         }
         const params = req.params[0];
         var seo: any = {
-          title: 'Freedom Tube',
+          title: 'Healing Tube',
           description:
             'The Umbrella platform for All freedom based projects worldwide',
           image:
-            'https://tube.freedom.buzz/assets/banner/freedom-buzz-high-res.jpeg',
-          site: 'https://tube.freedom.buzz/',
-          url: 'https://tube.freedom.buzz' + params,
-          keywords: 'Freedom Tube',
+            'https://video.healing.tube/assets/banner/Healing-Tube-Logo.jpg',
+          site: 'https://video.healing.tube/',
+          url: 'https://video.healing.tube' + params,
+          keywords: 'Healing Tube',
         };
         if (
           params.indexOf('channel/') > -1
@@ -126,7 +126,7 @@ export function app(): express.Express {
           const pdhtml = document.createElement('div');
           pdhtml.innerHTML = post?.postdescription || post?.metadescription;
           const talent = {
-            name: post?.title || post?.albumname || 'Freedom.Buzz Post',
+            name: post?.title || post?.albumname || 'Healing.Tube Post',
             description: pdhtml?.textContent || 'Post content',
             image: post?.thumbfilename || post?.metaimage || post?.imageUrl,
           };
