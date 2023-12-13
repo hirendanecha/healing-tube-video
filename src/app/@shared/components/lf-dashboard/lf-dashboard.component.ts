@@ -42,7 +42,7 @@ export class LfDashboardComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private commonService: CommonService,
-    private shareService: ShareService,
+    public shareService: ShareService,
     public authService: AuthService,
     public modalService: NgbModal,
     private router: Router
@@ -109,7 +109,7 @@ export class LfDashboardComponent implements OnInit {
   }
 
   openProfile(Id): void {
-    const url = `https://healing.tube/settings/view-profile/${Id}`;
+    const url = `https://freedom.buzz/settings/view-profile/${Id}`;
     window.open(url, '_blank');
   }
 
