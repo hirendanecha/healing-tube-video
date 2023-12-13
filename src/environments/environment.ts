@@ -1,7 +1,7 @@
-const loginUrl = 'https://freedom.buzz/login';
-const logoutUrl = 'https://freedom.buzz/logout';
-const frontendUrl = 'https://tube.freedom.buzz/';
-const backendUrl = 'https://freedom-api.opash.in/';
+const loginUrl = 'https://www.healing.tube/login';
+const logoutUrl = 'https://www.healing.tube/logout';
+const frontendUrl = 'https://video.healing.tube/';
+const backendUrl =  'https://api.healing.tube/';
 
 // const frontendUrl = 'http://localhost:4200/';
 // const backendUrl = 'http://localhost:8080/';
