@@ -82,7 +82,7 @@ export function app(): express.Express {
           description:
             'Private video consultations with Naturopathic Doctors and Holistic Healers from around the world. Social Discussion on how to heal various ailments.',
           image:
-            'https://video.healing.tube/assets/banner/Healing-Tube-Logo.jpg',
+            'https://video.healing.tube/assets/banner/Ht-Profile-pic-default (1).png',
           site: 'https://video.healing.tube/',
           url: 'https://video.healing.tube' + params,
           keywords: 'Healing Tube',
