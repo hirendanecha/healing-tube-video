@@ -69,7 +69,7 @@ export class SeoService {
     }
 
     if (!tagValue.image) {
-      tagValue.image = 'https://freedom.buzz/assets/images/banner/freedom-buzz-high-res.jpeg';
+      tagValue.image = 'https://www.healing.tube/assets/banner/HT-banner-default.png';
     }
 
     this.meta.updateTag({
