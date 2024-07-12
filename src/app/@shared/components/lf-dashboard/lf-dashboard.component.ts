@@ -19,7 +19,6 @@ import { VideoPostModalComponent } from '../../modals/video-post-modal/video-pos
 import { CreateChannelComponent } from '../../modals/create-channel/create-channel-modal.component';
 import { ConferenceLinkComponent } from '../../modals/create-conference-link/conference-link-modal.component';
 import { ShareService } from '../../services/share.service';
-import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-lf-dashboard',
@@ -43,6 +42,8 @@ export class LfDashboardComponent implements OnInit {
   channelList: any = [];
   mediaApproved: boolean;
   userId: number;
+  advertisementDataList: any = [];
+
   constructor(
     private route: ActivatedRoute,
     private commonService: CommonService,
@@ -69,9 +70,9 @@ export class LfDashboardComponent implements OnInit {
     //   console.log(params.channelId);
     if (newParams['channelId']) {
       this.channelId = newParams['channelId'];
-      delete newParams['channelId'];
+      delete newParams['channelId']
       const navigationExtras: NavigationExtras = {
-        queryParams: newParams,
+        queryParams: newParams
       };
       this.router.navigate([], navigationExtras);
     }
@@ -90,7 +91,8 @@ export class LfDashboardComponent implements OnInit {
     }
     this.shareService.mediaApproved$.subscribe(value => {
       this.mediaApproved = value;
-    });    
+    });
+    this.getadvertizements();
   }
 
   getChannelDetails(value): void {
@@ -115,7 +117,7 @@ export class LfDashboardComponent implements OnInit {
 
   getSearchData(searchText): void {
     this.searchTextEmitter?.emit(searchText);
-    this.searchText = '';
+    this.searchText = ''
   }
 
   openProfile(Id): void {
@@ -162,7 +164,7 @@ export class LfDashboardComponent implements OnInit {
     };
   
     if (!this.channelList || !this.channelList.length) {
-      this.userId = JSON.parse(this.authService.getUserData() as any)?.UserID;
+      this.userId = JSON.parse(this.authService.getUserData() as any)?.Id;
       const apiUrl = `${environment.apiUrl}channels/get-channels/${this.userId}`;
       this.commonService.get(apiUrl).subscribe(
         (res) => {
@@ -204,7 +206,7 @@ export class LfDashboardComponent implements OnInit {
   }
 
   getChannels(): void {
-    this.userId = JSON.parse(this.authService.getUserData() as any)?.UserID;
+    this.userId = JSON.parse(this.authService.getUserData() as any)?.Id;
     const apiUrl = `${environment.apiUrl}channels/get-channels/${this.userId}`;
     this.commonService.get(apiUrl).subscribe({
       next: (res) => {
@@ -214,6 +216,16 @@ export class LfDashboardComponent implements OnInit {
         // console.log(this.channelList);
       },
       error(err) {
+        console.log(err);
+      },
+    });
+  }
+  getadvertizements(): void {
+    this.commonService.getAdvertisement().subscribe({
+      next: (res: any) => {
+        this.advertisementDataList = res;
+      },
+      error: (err) => {
         console.log(err);
       },
     });

@@ -16,18 +16,18 @@ export class MyAccountComponent {
   channelDetails: any = {};
   apiUrl = environment.apiUrl + 'channels';
   channelData: any = [];
-  channelList:any=[];
-  countChannel:number;
   activePage = 0;
   channelId: number;
+  channelList:any=[];
+  countChannel:number;
   hasMoreData = false;
   postedVideoCount: number;
   userChannelCount: number;
   constructor(
     private commonService: CommonService,
     private spinner: NgxSpinnerService,
+    public shareService: ShareService,
     private authService:AuthService,
-    public shareService: ShareService
   ) {
     this.channelId = +localStorage.getItem('channelId');
     this.userData = JSON.parse(localStorage.getItem('authUser'));
@@ -105,7 +105,7 @@ export class MyAccountComponent {
     });
   }
   getChannels(): void {
-    const userId = JSON.parse(this.authService.getUserData() as any)?.UserID;
+    const userId = JSON.parse(this.authService.getUserData() as any)?.Id;
     const apiUrl = `${environment.apiUrl}channels/get-channels/${userId}`;
     this.commonService.get(apiUrl).subscribe({
       next: (res) => {
