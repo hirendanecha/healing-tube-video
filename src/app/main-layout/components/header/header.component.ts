@@ -65,6 +65,11 @@ export class HeaderComponent implements OnInit {
     localStorage.clear();
     sessionStorage.clear();
     location.href = environment.logoutUrl;
+    // const url = environment.apiUrl + 'customers/logout';
+    // this.commonService.get(url).subscribe({
+    //   next: (res) => {
+    //   },
+    // });
   }
 
   isUserMediaApproved(): boolean {

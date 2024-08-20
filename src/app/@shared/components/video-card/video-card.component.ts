@@ -52,7 +52,7 @@ export class VideoCardComponent implements OnInit, AfterViewInit {
       window.addEventListener('resize', this.onResize.bind(this));
     });
     if (this.isInnerWidthSmall) {
-      this.getadvertizements();
+      // this.getadvertizements();
     }
   }
 
