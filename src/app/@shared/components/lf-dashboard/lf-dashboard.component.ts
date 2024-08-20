@@ -53,7 +53,7 @@ export class LfDashboardComponent implements OnInit {
     private router: Router
   ) {
     this.useDetails = JSON.parse(this.authService.getUserData() as any);
-    // this.getChannelByUserId(this.useDetails?.object-fit: scale-down;);
+    // this.getChannelByUserId(this.useDetails?.UserID);
     this.route.paramMap.subscribe((paramMap) => {
       // https://facetime.opash.in/
       const name = paramMap.get('name');
